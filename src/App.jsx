@@ -181,10 +181,7 @@ const App = ({ bgColor }) => {
       {successMessage && (
         <div className="bg-[hsl(171,45%,16%)] lg:w-[30rem] mx-auto rounded-xl p-8">
           <div className="flex gap-2 items-center justify-start text-white">
-            <img
-              src="/icon-success-check.svg"
-              alt="icon-success"
-            />
+            <img src="/icon-success-check.svg" alt="icon-success" />
             <span>Message Sent!</span>
           </div>
           <p className="text-[hsl(186,15%,69%)] mt-2">
@@ -194,30 +191,32 @@ const App = ({ bgColor }) => {
       )}
 
       <div className="bg-white p-6 lg:p-10 min-w-[20rem] mx-auto rounded-2xl lg:w-[44rem]">
-        <h1 className="text-4xl font-[700] text-[hsl(169,82%,15%)] mb-8 lg:mb-0">
+        <header className="text-4xl font-[700] text-[hsl(169,82%,15%)] mb-8 lg:mb-0">
           Contact Us
-        </h1>
+        </header>
         <form
           onKeyDown={handleFormSubmitKeyDown}
           onSubmit={handleFormSubmit}
           autoComplete="off"
         >
-          <label className="text-[hsl(187,24%,22%)] lg:inline-block lg:w-[49%]">
-            First Name
-            <span className="ml-2 text-xl text-[hsl(169,82%,27%)]">*</span>
-            <input
-              className={`w-[100%] mt-2  lg:mb-0 p-3 rounded-md bg-transparent border-[1px] ${
-                error.firstName
-                  ? "border-[hsl(0,66%,54%)]"
-                  : "border-[hsl(186,15%,59%)]"
-              }  focus:border-[hsl(169,82%,27%)] focus:outline-none hover:border-[hsl(169,82%,27%)]`}
-              type="text"
-              name="firstName"
-              value={initialValues.firstName}
-              ref={firstNameRef}
-              onKeyDown={(e) => handleKeyDown(e, "firstName")}
-              onChange={handleChange}
-            />
+          <section className="lg:inline-block lg:w-[49%]">
+            <label className="text-[hsl(187,24%,22%)]">
+              First Name
+              <span className="ml-2 text-xl text-[hsl(169,82%,27%)]">*</span>
+              <input
+                className={`w-[100%] mt-2  lg:mb-0 p-3 rounded-md bg-transparent border-[1px] ${
+                  error.firstName
+                    ? "border-[hsl(0,66%,54%)]"
+                    : "border-[hsl(186,15%,59%)]"
+                }  focus:border-[hsl(169,82%,27%)] focus:outline-none hover:border-[hsl(169,82%,27%)]`}
+                type="text"
+                name="firstName"
+                value={initialValues.firstName}
+                ref={firstNameRef}
+                onKeyDown={(e) => handleKeyDown(e, "firstName")}
+                onChange={handleChange}
+              />
+            </label>
             <p
               className={`text-[hsl(0,66%,54%)] mt-2 ${
                 error.firstName ? "visible" : "invisible"
@@ -225,24 +224,26 @@ const App = ({ bgColor }) => {
             >
               This field is required
             </p>
-          </label>
+          </section>
 
-          <label className="text-[hsl(187,24%,22%)] mt-6 lg:inline-block lg:w-[49%] lg:ml-3">
-            Last Name
-            <span className="ml-2 text-xl text-[hsl(169,82%,27%)]">*</span>
-            <input
-              className={`w-[100%] mt-2 p-3 rounded-md bg-transparent border-[1px] ${
-                error.lastName
-                  ? "border-[hsl(0,66%,54%)]"
-                  : "border-[hsl(186,15%,59%)]"
-              } focus:border-[hsl(169,82%,27%)] focus:outline-none hover:border-[hsl(169,82%,27%)]`}
-              type="text"
-              name="lastName"
-              value={initialValues.lastName}
-              ref={lastNameRef}
-              onKeyDown={(e) => handleKeyDown(e, "lastName")}
-              onChange={handleChange}
-            />
+          <section className="lg:inline-block lg:w-[49%] lg:ml-3 mt-6">
+            <label className="text-[hsl(187,24%,22%)]">
+              Last Name
+              <span className="ml-2 text-xl text-[hsl(169,82%,27%)]">*</span>
+              <input
+                className={`w-[100%] mt-2 p-3 rounded-md bg-transparent border-[1px] ${
+                  error.lastName
+                    ? "border-[hsl(0,66%,54%)]"
+                    : "border-[hsl(186,15%,59%)]"
+                } focus:border-[hsl(169,82%,27%)] focus:outline-none hover:border-[hsl(169,82%,27%)]`}
+                type="text"
+                name="lastName"
+                value={initialValues.lastName}
+                ref={lastNameRef}
+                onKeyDown={(e) => handleKeyDown(e, "lastName")}
+                onChange={handleChange}
+              />
+            </label>
             <p
               className={`text-[hsl(0,66%,54%)] mt-2 ${
                 error.lastName ? "visible" : "invisible"
@@ -250,9 +251,9 @@ const App = ({ bgColor }) => {
             >
               This field is required
             </p>
-          </label>
+          </section>
 
-          <div className="">
+          <section className="mb-6">
             <label className="text-[hsl(187,24%,22%)] mt-6">
               Email Address
               <span className="ml-2 text-xl text-[hsl(169,82%,27%)]">*</span>
@@ -280,23 +281,20 @@ const App = ({ bgColor }) => {
                   </p>
                 ))}
             </label>
-          </div>
+          </section>
 
-          <h2 className="text-[hsl(187,24%,22%)] mt-6 mb-3">
+          <label className="text-[hsl(187,24%,22%)]">
             Query Type
             <span className="ml-2 text-xl text-[hsl(169,82%,27%)]">*</span>
-          </h2>
+          </label>
 
-          <div>
+          <section>
             <div
               className={`w-[100%] inline-block lg:w-[49%] mt-2 mb-4 py-3 px-5 rounded-md bg-transparent border-[1px] border-[hsl(186,15%,59%)]`}
             >
               <div className="flex items-center">
                 {initialValues.radioButton === "general" ? (
-                  <img
-                    src="/icon-radio-selected.svg"
-                    alt="icon-radio"
-                  />
+                  <img src="/icon-radio-selected.svg" alt="icon-radio" />
                 ) : (
                   <input
                     className="focus:border-[hsl(169,82%,27%)] focus:outline-none"
@@ -319,13 +317,10 @@ const App = ({ bgColor }) => {
                 </label>
               </div>
             </div>
-            <div className="w-[100%] lg:w-[49%] inline-block mt-2 lg:ml-3 py-3 px-5 rounded-md bg-transparent border-[1px] border-[hsl(186,15%,59%)]">
+            <div className="w-[100%] lg:w-[49%] inline-block mt-2 lg:ml-3 py-3 px-5 mb-4 rounded-md bg-transparent border-[1px] border-[hsl(186,15%,59%)]">
               <div className="flex items-center">
                 {initialValues.radioButton === "support" ? (
-                  <img
-                    src="/icon-radio-selected.svg"
-                    alt="icon-radio"
-                  />
+                  <img src="/icon-radio-selected.svg" alt="icon-radio" />
                 ) : (
                   <input
                     className="focus:border-[hsl(169,82%,27%)] focus:outline-none"
@@ -347,15 +342,15 @@ const App = ({ bgColor }) => {
                 </label>
               </div>
             </div>
-          </div>
+          </section>
           {error.radioButton && (
             <p className="text-[hsl(0,66%,54%)]">Please select a query type</p>
           )}
 
-          <h2 className="text-[hsl(187,24%,22%)] mt-6 lg:mt-2">
+          <label className="text-[hsl(187,24%,22%)]">
             Message
             <span className="ml-2 text-xl text-[hsl(169,82%,27%)]">*</span>
-          </h2>
+          </label>
           <textarea
             rows={10}
             className={`w-[100%] lg:h-[7rem] mt-2 p-4 rounded-md border-[1px] ${
@@ -363,7 +358,6 @@ const App = ({ bgColor }) => {
                 ? "border-[hsl(0,66%,54%)]"
                 : "border-[hsl(186,15%,59%)]"
             } focus:border-[hsl(169,82%,27%)] focus:outline-none hover:border-[hsl(169,82%,27%)]`}
-            type="text"
             name="message"
             value={initialValues.message}
             onChange={handleChange}
@@ -376,10 +370,7 @@ const App = ({ bgColor }) => {
 
           <div className="flex items-center gap-4 mt-8">
             {initialValues.checkbox ? (
-              <img
-                src="/icon-checkbox-check.svg"
-                alt="icon-checkbox"
-              />
+              <img src="/icon-checkbox-check.svg" alt="icon-checkbox" />
             ) : (
               <input
                 type="checkbox"
@@ -390,10 +381,10 @@ const App = ({ bgColor }) => {
                 onKeyDown={(e) => handleKeyDown(e, "checkbox")}
               />
             )}
-            <p>
+            <label>
               I consent to being contacted by the team
               <span className="ml-2 text-xl text-[hsl(169,82%,27%)]">*</span>
-            </p>
+            </label>
           </div>
           {error.checkbox && (
             <p className="text-[hsl(0,66%,54%)] mt-1">
