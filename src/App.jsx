@@ -182,7 +182,7 @@ const App = ({ bgColor }) => {
         <div className="bg-[hsl(171,45%,16%)] lg:w-[30rem] mx-auto rounded-xl p-8">
           <div className="flex gap-2 items-center justify-start text-white">
             <img
-              src="../assets/images/icon-success-check.svg"
+              src="/icon-success-check.svg"
               alt="icon-success"
             />
             <span>Message Sent!</span>
@@ -294,7 +294,7 @@ const App = ({ bgColor }) => {
               <div className="flex items-center">
                 {initialValues.radioButton === "general" ? (
                   <img
-                    src="../assets/images/icon-radio-selected.svg"
+                    src="/icon-radio-selected.svg"
                     alt="icon-radio"
                   />
                 ) : (
@@ -323,7 +323,7 @@ const App = ({ bgColor }) => {
               <div className="flex items-center">
                 {initialValues.radioButton === "support" ? (
                   <img
-                    src="../assets/images/icon-radio-selected.svg"
+                    src="/icon-radio-selected.svg"
                     alt="icon-radio"
                   />
                 ) : (
@@ -377,7 +377,7 @@ const App = ({ bgColor }) => {
           <div className="flex items-center gap-4 mt-8">
             {initialValues.checkbox ? (
               <img
-                src="../assets/images/icon-checkbox-check.svg"
+                src="/icon-checkbox-check.svg"
                 alt="icon-checkbox"
               />
             ) : (
